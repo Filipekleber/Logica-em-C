@@ -39,7 +39,7 @@ int main(){
 
     if(acertou){
 
-        printf("Parabens, Você acertou!!");
+        printf("Parabens, Você acertou!");
 
     }else{
         int maior = (chuteJogador > numeroSecreto);
