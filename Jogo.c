@@ -27,32 +27,47 @@ int main(){
         printf("Jogo encerrado...\n");
         return 0;
     }
+
     printf("Vamos comecar o jogo!!\n\n\n");
 
     int numeroSecreto = 30; 
     int chuteJogador;
+    int tentativas = 1;
 
-    printf("Escolha um numero para comecar: ");
-    scanf(" %d", &chuteJogador);
+    while (1)
+    {
+        printf("Tentativas %d\n", tentativas);
+        printf("Escolha um numero para comecar: ");
+        scanf(" %d", &chuteJogador);
 
-    int acertou = chuteJogador == numeroSecreto;
+        if(chuteJogador < 0){
+            printf("Por favor, chute um numero positivo\n");
 
-    if(acertou){
-
-        printf("Parabens, Você acertou!");
-
-    }else{
-        int maior = (chuteJogador > numeroSecreto);
-
-        if(maior){
-            printf("O numero secreto e menor, tente novamente!\n");
+            continue;
         }
-        int menor = (chuteJogador < numeroSecreto);
 
-        if(menor){
-            printf("O numero e maior, tente novamente!\n");
+        int acertou = chuteJogador == numeroSecreto;
+
+        if(acertou){
+            printf("Parabens, Você acertou!");
+            break;
+        }else{
+            int maior = (chuteJogador > numeroSecreto);
+
+            if(maior){
+                printf("O numero secreto e menor, tente novamente!\n");
+            }
+            int menor = (chuteJogador < numeroSecreto);
+
+            if(menor){
+                printf("O numero e maior, tente novamente!\n");
+            }
         }
-    }
+
+        tentativas++;
+}
+
+printf("O numero de tentativas foi: %d", tentativas);
 
 return 0;
 
