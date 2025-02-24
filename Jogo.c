@@ -33,6 +33,7 @@ int main(){
     int numeroSecreto = 30; 
     int chuteJogador;
     int tentativas = 1;
+    int pontos = 1000;
 
     while (1)
     {
@@ -65,9 +66,12 @@ int main(){
         }
 
         tentativas++;
+        int pontosPerdidos = (chuteJogador - numeroSecreto) / 2;
+        pontos = pontos - pontosPerdidos;
 }
 
-printf("O numero de tentativas foi: %d", tentativas);
+printf("O numero de tentativas foi: %d\n", tentativas);
+printf("Sua pontuação foi de: %d\n", pontos);
 
 return 0;
 
