@@ -66,7 +66,7 @@ int main(){
         }
 
         tentativas++;
-        int pontosPerdidos = (chuteJogador - numeroSecreto) / 2;
+        int pontosPerdidos = abs (chuteJogador - numeroSecreto) / 2;
         pontos = pontos - pontosPerdidos;
 }
 
