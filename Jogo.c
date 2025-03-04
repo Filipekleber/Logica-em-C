@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int queroJogar(){
 
@@ -13,7 +14,7 @@ int queroJogar(){
 
 //Bloco aonde vai extrair a resposta do jogador
 
-    if(resposta == 's' || resposta == 'S' || resposta == 'sim' || resposta == 'Sim'){
+    if(resposta == 'sim' || resposta == 'Sim'){
         return 1;
     }else{
         return 0;
@@ -33,7 +34,7 @@ int main(){
     int numeroSecreto = 30; 
     int chuteJogador;
     int tentativas = 1;
-    int pontos = 1000;
+    double pontos = 1000;
 
     while (1)
     {
@@ -66,12 +67,13 @@ int main(){
         }
 
         tentativas++;
-        int pontosPerdidos = abs (chuteJogador - numeroSecreto) / 2;
+        double pontosPerdidos = abs (chuteJogador - numeroSecreto) / (double)2;
         pontos = pontos - pontosPerdidos;
 }
 
 printf("O numero de tentativas foi: %d\n", tentativas);
-printf("Sua pontuação foi de: %d\n", pontos);
+printf("Sua pontuação foi de: %.1f\n", pontos);
+printf("Fim de jogo\n");
 
 return 0;
 
