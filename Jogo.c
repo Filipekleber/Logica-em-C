@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 int queroJogar(){
 
@@ -31,7 +32,11 @@ int main(){
 
     printf("Vamos comecar o jogo!!\n\n\n");
 
-    int numeroSecreto = 30; 
+    int segundos = time(0);
+    srand(segundos);
+    int numeroGrande = rand();
+
+    int numeroSecreto = numeroSecreto % 100; 
     int chuteJogador;
     int tentativas = 1;
     double pontos = 1000;
