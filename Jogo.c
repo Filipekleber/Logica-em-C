@@ -39,19 +39,17 @@ int main(){
     }
 //------------------------------------------------------------------------------------------------------------
     
-    int numeroSecreto = numeroSecreto % 100; 
-    int chuteJogador;
-    int tentativas = 1;
-    double pontos = 1000;
+ 
+
     
-    int acertou = 0;
+    int acertou;
 
     printf("Vamos comecar o jogo!!\n\n\n");
 //----------------------------------------------------------------------------------------------------------------
 
     //Fução que ira perguntar ao jogador qual o nivel que ele quer jogar.
     int nivel;
-    printf("Qual nivel voce vai querer jogar?");
+    printf("Qual nivel voce vai querer jogar?\n");
     printf("(1) facil (2) medio (3) Dificil:    ");
     scanf("%d", &nivel);
 
@@ -74,10 +72,12 @@ switch (nivel)
 //Função para gerar um número aleatorio.
     int segundos = time(0);
     srand(segundos);
-    int numeroGrande = rand();
+    int numeroaleatorio = rand();
 
-  
-
+    int chuteJogador;
+    int tentativas = 1;
+    double pontos = 1000;
+    int numeroSecreto = numeroaleatorio % 100; 
  
     for (int i = 1; i <= numeroTentativas; i++){
         
