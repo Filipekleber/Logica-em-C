@@ -1,11 +1,12 @@
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 #include <time.h>
 
 int queroJogar(){
 
-    char resposta;
-    char resposta2[5]; 
+
+    char resposta2; 
 
     printf("\n\n");
     printf("          P  /_\\  P                                                     \n");
@@ -17,17 +18,18 @@ int queroJogar(){
     printf("          \\__|_|__/                                                    \n");
     printf("\n\n");
 
-    printf("Voce deseja jogar?");
-    scanf(" %c", &resposta);
-    scanf(" %s", &resposta2);
+    printf("Voce esta pronto para jogar?(s/n): ");
+    scanf(" %c", &resposta2);
 
 //Bloco aonde vai extrair a resposta do jogador
 
-    if(resposta == 'sim' || resposta == 'Sim'){
-        return 0;
-    }else{
+
+    if(resposta2 == 's'){
         return 1;
+    }else{
+        return 0;
     }
+    
 }
 //------------------------------------------------------------------------------------------------------------
 
@@ -50,7 +52,7 @@ int main(){
     //Fução que ira perguntar ao jogador qual o nivel que ele quer jogar.
     int nivel;
     printf("Qual nivel voce vai querer jogar?\n");
-    printf("(1) facil (2) medio (3) Dificil:    ");
+    printf("(1) facil (2) medio (3) Dificil: ");
     scanf("%d", &nivel);
 
     int numeroTentativas;
@@ -112,6 +114,7 @@ switch (nivel)
         tentativas++;
         double pontosPerdidos = abs (chuteJogador - numeroSecreto) / (double)2;
         pontos = pontos - pontosPerdidos;
+        
 }
 
 printf("Fim de jogo\n");
